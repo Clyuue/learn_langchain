@@ -1,10 +1,8 @@
 import os
-from dotenv import load_dotenv
-load_dotenv(override=True)
 import requests, json
 from langchain.tools import tool
-from langchain.agents import create_agent
-from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 OPENWEATHERMAP_API_KEY = os.getenv("OPENWEATHERMAP_API_KEY")
 
@@ -49,6 +47,9 @@ def get_weather(location):
         return json.dumps(data)
 
 if __name__ == "__main__":
+    from langchain.agents import create_agent
+    from langchain_openai import ChatOpenAI
+    
     model = ChatOpenAI(model="gpt-5-nano-2025-08-07",)
     agent = create_agent(
         model=model,
