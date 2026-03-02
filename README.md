@@ -1,6 +1,6 @@
 # LangChain Agents 學習專案
 
-這是一個使用 LangChain 框架學習 Agent 開發的專案，目前包含兩個 Agent 範例。
+這是一個使用 LangChain 框架學習 Agent 開發的專案，目前包含四個 Agent 範例。
 
 ## 環境設置
 
@@ -49,9 +49,39 @@ python weather_agent.py
 python tavily_agent.py
 ```
 
+**環境變數：**
+- `TAVILY_API_KEY`：Tavily API 金鑰
+
+### 3. 檔案寫入 Agent (`write_file_agent.py`)
+
+將文字內容寫入本地檔案。
+
+**功能：**
+- 自動以時間戳記命名檔案
+- 回傳檔案完整路徑
+
+**使用方式：**
+```bash
+python write_file_agent.py
+```
+
+### 4. 多工具 Agent (`multi_tool_agent.py`)
+
+整合天氣查詢與檔案寫入工具的多功能 Agent。
+
+**功能：**
+- 串接多個工具進行複雜任務
+- 自動判斷需要調用的工具
+
+**使用方式：**
+```bash
+python multi_tool_agent.py
+```
+
 ## 技術栈
 
 - **LangChain**：Agent 框架
 - **OpenAI**：GPT-5 模型 (gpt-5-nano-2025-08-07)
 - **OpenWeatherMap API**：天氣數據
 - **Tavily**：網路搜尋
+- **python-dotenv**：環境變數管理
